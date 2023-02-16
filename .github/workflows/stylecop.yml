@@ -1,0 +1,28 @@
+name: StyleCop
+
+on: [push, pull_request]
+
+jobs:
+  stylecop:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '6.0.x'
+
+    - name: Restore Dependencies
+      run: dotnet restore
+
+    - name: Run StyleCop
+      run: dotnet stylecop
+
+    - name: Upload StyleCop Results
+      if: always()
+      uses: actions/upload-artifact@v2
+      with:
+        name: StyleCop Results
+        path: '**/*.xml'

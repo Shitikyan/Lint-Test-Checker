@@ -1,0 +1,33 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'windows-latest'
+
+steps:
+- task: UseDotNet@2
+  inputs:
+    packageType: 'sdk'
+    version: '5.x'
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'restore'
+    projects: '**/*.csproj'
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'build'
+    projects: '**/*.csproj'
+
+- task: StyleCopCli@1
+  inputs:
+    solutionOrProject: '**/*.csproj'
+    configFilePath: 'stylecop.yml'
+    outputPath: '$(Build.ArtifactStagingDirectory)/stylecop-results.xml'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    artifactName: 'stylecop-results'
+

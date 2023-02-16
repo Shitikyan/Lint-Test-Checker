@@ -1,0 +1,35 @@
+################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/SC.IFTM.Domain/obj
+/.vs/SC.IFTM
+/SC.IFTM.API/obj
+/SC.IFTM.Application/obj
+/SC.IFTM.Infrastructure/obj
+/SC.IFTM.Persistence/obj
+/SC.IFTM.Persistence/bin
+/SC.IFTM.Domain.Shared/bin
+/SC.IFTM.Domain.Shared/obj
+/SC.IFTM.API/bin
+/SC.IFTM.Application/bin/Debug/netstandard2.1
+/SC.IFTM.Application/bin/Release/netstandard2.1
+/SC.IFTM.Domain/bin/Debug/netstandard2.1
+/SC.IFTM.Domain/bin/Release/netstandard2.1
+/SC.IFTM.Infrastructure/bin/Debug/netstandard2.1
+/SC.IFTM.Persistence/bin/Debug/netstandard2.1
+/.scannerwork
+/.sonarqube
+/SC.IFTM.API/Properties/PublishProfiles/SC-GRAPHQLTEST - Zip Deploy1.pubxml
+/SC.IFTM.API/Properties/PublishProfiles/SC-GRAPHQLTEST - Zip Deploy1.pubxml.user
+/SC.IFTM.API/Properties/ServiceDependencies/SC-GRAPHQLTEST - Zip Deploy1/profile.arm.json
+.DS_Store
+*.pdb
+*.dll
+.idea/
+/.vs/**
+*/obj
+*/bin
+
+helm/**/charts/*
+/SC.IFTM.API/appsettings.user.json
