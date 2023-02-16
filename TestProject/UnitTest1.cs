@@ -27,7 +27,7 @@ namespace TestProject
         [Fact]
         public void FailingTest()
         {
-            Assert.Equal(5, Add(2, 3));
+            Assert.Equal(4, Add(2, 3));
         }
 
         /// <summary>
